@@ -489,7 +489,7 @@
    "shuku": 31,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4401x3014",
     "license": "Public domain",
@@ -504,7 +504,7 @@
    "shuku": 32,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4432x3057",
     "license": "Public domain",
@@ -519,7 +519,7 @@
    "shuku": 33,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4439x2986",
     "license": "Public domain",
@@ -534,7 +534,7 @@
    "shuku": 34,
    "artist": "英泉",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4430x3075",
     "license": "Public domain",
@@ -549,7 +549,7 @@
    "shuku": 35,
    "artist": "英泉",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4440x3071",
     "license": "Public domain",
@@ -564,7 +564,7 @@
    "shuku": 36,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4418x3060",
     "license": "Public domain",
@@ -579,7 +579,7 @@
    "shuku": 37,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4494x3057",
     "license": "Public domain",
@@ -594,7 +594,7 @@
    "shuku": 38,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4423x3013",
     "license": "Public domain",
@@ -609,7 +609,7 @@
    "shuku": 39,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4440x3049",
     "license": "Public domain",
@@ -624,7 +624,7 @@
    "shuku": 40,
    "artist": "英泉",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4456x3053",
     "license": "Public domain",
@@ -639,7 +639,7 @@
    "shuku": 41,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4462x3069",
     "license": "Public domain",
@@ -654,7 +654,7 @@
    "shuku": 42,
    "artist": "広重",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4441x3059",
     "license": "Public domain",
@@ -669,7 +669,7 @@
    "shuku": 43,
    "artist": "英泉",
    "mvp": true,
-   "status": "assets",
+   "status": "authored",
    "scan": {
     "px": "4473x3045",
     "license": "Public domain",
@@ -1048,13 +1048,7 @@
    "shuku": 68,
    "artist": "広重",
    "mvp": false,
-   "status": "assets",
-   "scan": {
-    "px": "4966x4450",
-    "license": "Public domain",
-    "title": "File:NDL878870 続膝栗毛 １０編 上州草津温泉膝栗毛 上.pdf",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/NDL878870_%E7%B6%9A%E8%86%9D%E6%A0%97%E6%AF%9B_%EF%BC%91%EF%BC%90%E7%B7%A8_%E4%B8%8A%E5%B7%9E%E8%8D%89%E6%B4%A5%E6%B8%A9%E6%B3%89%E8%86%9D%E6%A0%97%E6%AF%9B_%E4%B8%8A.pdf"
-   }
+   "status": "todo"
   },
   {
    "n": 70,

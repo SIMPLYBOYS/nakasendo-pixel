@@ -1,0 +1,35 @@
+{
+ "colors": [
+  "#ccbd8c",
+  "#decf9d",
+  "#827c53",
+  "#686645",
+  "#9c9064",
+  "#4c4b35",
+  "#afa67e",
+  "#2e2e26",
+  "#667d76",
+  "#cfb05a",
+  "#4a605e",
+  "#869a8c",
+  "#1e374f",
+  "#bb8154"
+ ],
+ "share": [
+  0.1129,
+  0.1099,
+  0.1075,
+  0.1068,
+  0.1047,
+  0.0978,
+  0.0812,
+  0.071,
+  0.0486,
+  0.0456,
+  0.0436,
+  0.032,
+  0.0244,
+  0.014
+ ],
+ "method": "k-means k=13 + 1 reserved vermilion slot, over 68 Kisokaido prints (auto plate crop), Eisen+Hiroshige combined"
+}

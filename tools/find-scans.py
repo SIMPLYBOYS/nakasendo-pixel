@@ -88,9 +88,18 @@ def print_num(title):
     return DIG.get(s)
 
 
+# 橫大判的規格。實測 68 幅正版全落在 1.43–1.56，放寬到 1.30–1.70 留容差。
+# 光靠 w>h 擋不住《續膝栗毛》的書封（草津，1.12，還是 PDF）——它也是橫的。
+ASPECT = (1.30, 1.70)
+
 def is_series(c):
-    """橫大判才是英泉/廣重這套；直幅是國芳武者繪或國貞役者繪，要排除。"""
-    return c["width"] > c["height"] > 0
+    """英泉/廣重這套是橫大判單張錦繪。排除：
+    - 直幅 → 國芳武者繪、國貞役者繪（站名相同，是另外兩套系列）
+    - 長寬比離譜 → 書封、圖冊頁
+    - PDF → NDL 的和本書籍掃描（《續膝栗毛》之類），不是單張版畫"""
+    if c["title"].lower().endswith(".pdf") or not c["height"]:
+        return False
+    return ASPECT[0] <= c["width"] / c["height"] <= ASPECT[1]
 
 
 def rank(c):
