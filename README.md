@@ -20,6 +20,17 @@
 - **MVP 切片（洗馬 → 馬籠 13 站）**：**13/13 全綠**，已逐張目視確認。
 - **繪師歸屬**：英泉 24 / 廣重 46（+ 中津川第二版）—— 與文獻公認的 24/47 吻合。
 
+### 玩玩看
+
+```bash
+python3 -m http.server 8000   # 然後開 http://localhost:8000
+```
+
+| | |
+|---|---|
+| ![鳥瞰圖](docs/screenshots/overworld.png) | ![場景](docs/screenshots/scene.png) |
+| *北斎《木曽路名所一覧》當 overworld——木曾谷十三宿* | *在英泉/廣重的真跡裡找三個細節* |
+
 ### Phase 1 進行中
 
 - [x] overworld 的 IIIF tile 抓取器（[tools/fetch-overworld.py](tools/fetch-overworld.py)，7898×5873）
@@ -27,9 +38,11 @@
       不值得為此把場景與圖鑑分流成兩套（[報告](docs/palette-report.md)）
 - [x] 〈洗馬〉月夜通過量化 pipeline —— 東海道沒驗過的光線 case
 - [x] MVP 13 站（洗馬→馬籠）遊戲資產產出
+- [x] **引擎 fork 自 tokaido-pixel**，換上中山道的 overworld、13 站與山線事件表
+- [x] 山線事件表：峠越え・大雪・福島關所・皇女和宮下向——東海道的招牌事件「川止め」
+      在這裡不存在，因為中山道當年正是為了避開大川渡涉才被選走
+- [ ] **overworld 節點座標：7 站已從地名卡片讀出，6 站（上松→馬籠）是沿谷內插，待查證**
 - [ ] 補草津、大津（NDL / LOC / Rijksmuseum）
-- [ ] 路線維度（overworld 切換 + 事件表分流）
-- [ ] 山線事件表：峠越え・大雪（東海道的「川止め」在這裡反轉成賣點）
 
 引擎與 pipeline 直接重用 tokaido-pixel，本作是 content pack 不是新遊戲；唯一程式改動是加「路線」維度。分析全文見 vault `research/中山道-木曾街道六十九次-像素遊戲擴充分析.md`。
 

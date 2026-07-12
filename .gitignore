@@ -8,3 +8,6 @@ assets/*.tiff
 __pycache__/
 *.pyc
 .DS_Store
+
+# 工具殘留
+.playwright-mcp/
