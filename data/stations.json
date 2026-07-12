@@ -1,0 +1,648 @@
+{
+ "series": "木曽海道六拾九次之内",
+ "note": "渓斎英泉 24 + 歌川広重 47 = 71 幅 / 70 編號（日本橋 1 → 大津 70）",
+ "overworld": {
+  "slug": "00-overworld-kisoji-meisho-ichiran",
+  "ja": "木曽路名所一覧",
+  "artist": "葛飾北斎",
+  "year": 1819,
+  "status": "todo"
+ },
+ "status_flow": "todo → assets → authored → verified",
+ "stations": [
+  {
+   "n": 1,
+   "slug": "01-nihonbashi",
+   "ja": "日本橋",
+   "shuku": null,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 2,
+   "slug": "02-itabashi",
+   "ja": "板橋",
+   "shuku": 1,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 3,
+   "slug": "03-warabi",
+   "ja": "蕨",
+   "shuku": 2,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 4,
+   "slug": "04-urawa",
+   "ja": "浦和",
+   "shuku": 3,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 5,
+   "slug": "05-omiya",
+   "ja": "大宮",
+   "shuku": 4,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 6,
+   "slug": "06-ageo",
+   "ja": "上尾",
+   "shuku": 5,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 7,
+   "slug": "07-okegawa",
+   "ja": "桶川",
+   "shuku": 6,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 8,
+   "slug": "08-konosu",
+   "ja": "鴻巣",
+   "shuku": 7,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 9,
+   "slug": "09-kumagaya",
+   "ja": "熊谷",
+   "shuku": 8,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 10,
+   "slug": "10-fukaya",
+   "ja": "深谷",
+   "shuku": 9,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 11,
+   "slug": "11-honjo",
+   "ja": "本庄",
+   "shuku": 10,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 12,
+   "slug": "12-shinmachi",
+   "ja": "新町",
+   "shuku": 11,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 13,
+   "slug": "13-kuragano",
+   "ja": "倉賀野",
+   "shuku": 12,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 14,
+   "slug": "14-takasaki",
+   "ja": "高崎",
+   "shuku": 13,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 15,
+   "slug": "15-itahana",
+   "ja": "板鼻",
+   "shuku": 14,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 16,
+   "slug": "16-annaka",
+   "ja": "安中",
+   "shuku": 15,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 17,
+   "slug": "17-matsuida",
+   "ja": "松井田",
+   "shuku": 16,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 18,
+   "slug": "18-sakamoto",
+   "ja": "坂本",
+   "shuku": 17,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 19,
+   "slug": "19-karuizawa",
+   "ja": "軽井沢",
+   "shuku": 18,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 20,
+   "slug": "20-kutsukake",
+   "ja": "沓掛",
+   "shuku": 19,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 21,
+   "slug": "21-oiwake",
+   "ja": "追分",
+   "shuku": 20,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 22,
+   "slug": "22-otai",
+   "ja": "小田井",
+   "shuku": 21,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 23,
+   "slug": "23-iwamurada",
+   "ja": "岩村田",
+   "shuku": 22,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 24,
+   "slug": "24-shionada",
+   "ja": "塩名田",
+   "shuku": 23,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 25,
+   "slug": "25-yawata",
+   "ja": "八幡",
+   "shuku": 24,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 26,
+   "slug": "26-mochizuki",
+   "ja": "望月",
+   "shuku": 25,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 27,
+   "slug": "27-ashida",
+   "ja": "芦田",
+   "shuku": 26,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 28,
+   "slug": "28-nagakubo",
+   "ja": "長久保",
+   "shuku": 27,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 29,
+   "slug": "29-wada",
+   "ja": "和田",
+   "shuku": 28,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 30,
+   "slug": "30-shimosuwa",
+   "ja": "下諏訪",
+   "shuku": 29,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 31,
+   "slug": "31-shiojiri",
+   "ja": "塩尻",
+   "shuku": 30,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 32,
+   "slug": "32-seba",
+   "ja": "洗馬",
+   "shuku": 31,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 33,
+   "slug": "33-motoyama",
+   "ja": "本山",
+   "shuku": 32,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 34,
+   "slug": "34-niekawa",
+   "ja": "贄川",
+   "shuku": 33,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 35,
+   "slug": "35-narai",
+   "ja": "奈良井",
+   "shuku": 34,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 36,
+   "slug": "36-yabuhara",
+   "ja": "藪原",
+   "shuku": 35,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 37,
+   "slug": "37-miyanokoshi",
+   "ja": "宮ノ越",
+   "shuku": 36,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 38,
+   "slug": "38-fukushima",
+   "ja": "福島",
+   "shuku": 37,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 39,
+   "slug": "39-agematsu",
+   "ja": "上松",
+   "shuku": 38,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 40,
+   "slug": "40-suhara",
+   "ja": "須原",
+   "shuku": 39,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 41,
+   "slug": "41-nojiri",
+   "ja": "野尻",
+   "shuku": 40,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 42,
+   "slug": "42-midono",
+   "ja": "三留野",
+   "shuku": 41,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 43,
+   "slug": "43-tsumago",
+   "ja": "妻籠",
+   "shuku": 42,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 44,
+   "slug": "44-magome",
+   "ja": "馬籠",
+   "shuku": 43,
+   "artist": null,
+   "mvp": true,
+   "status": "todo"
+  },
+  {
+   "n": 45,
+   "slug": "45-ochiai",
+   "ja": "落合",
+   "shuku": 44,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 46,
+   "slug": "46-nakatsugawa",
+   "ja": "中津川",
+   "shuku": 45,
+   "artist": null,
+   "mvp": false,
+   "status": "todo",
+   "variants": [
+    "雨",
+    "晴"
+   ]
+  },
+  {
+   "n": 47,
+   "slug": "47-oi",
+   "ja": "大井",
+   "shuku": 46,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 48,
+   "slug": "48-okute",
+   "ja": "大湫",
+   "shuku": 47,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 49,
+   "slug": "49-hosokute",
+   "ja": "細久手",
+   "shuku": 48,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 50,
+   "slug": "50-mitake",
+   "ja": "御嶽",
+   "shuku": 49,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 51,
+   "slug": "51-fushimi",
+   "ja": "伏見",
+   "shuku": 50,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 52,
+   "slug": "52-ota",
+   "ja": "太田",
+   "shuku": 51,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 53,
+   "slug": "53-unuma",
+   "ja": "鵜沼",
+   "shuku": 52,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 54,
+   "slug": "54-kano",
+   "ja": "加納",
+   "shuku": 53,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 55,
+   "slug": "55-godo",
+   "ja": "河渡",
+   "shuku": 54,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 56,
+   "slug": "56-mieji",
+   "ja": "美江寺",
+   "shuku": 55,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 57,
+   "slug": "57-akasaka",
+   "ja": "赤坂",
+   "shuku": 56,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 58,
+   "slug": "58-tarui",
+   "ja": "垂井",
+   "shuku": 57,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 59,
+   "slug": "59-sekigahara",
+   "ja": "関ケ原",
+   "shuku": 58,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 60,
+   "slug": "60-imasu",
+   "ja": "今須",
+   "shuku": 59,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 61,
+   "slug": "61-kashiwabara",
+   "ja": "柏原",
+   "shuku": 60,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 62,
+   "slug": "62-samegai",
+   "ja": "醒井",
+   "shuku": 61,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 63,
+   "slug": "63-banba",
+   "ja": "番場",
+   "shuku": 62,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 64,
+   "slug": "64-toriimoto",
+   "ja": "鳥居本",
+   "shuku": 63,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 65,
+   "slug": "65-takamiya",
+   "ja": "高宮",
+   "shuku": 64,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 66,
+   "slug": "66-echigawa",
+   "ja": "愛知川",
+   "shuku": 65,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 67,
+   "slug": "67-musa",
+   "ja": "武佐",
+   "shuku": 66,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 68,
+   "slug": "68-moriyama",
+   "ja": "守山",
+   "shuku": 67,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 69,
+   "slug": "69-kusatsu",
+   "ja": "草津",
+   "shuku": 68,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  },
+  {
+   "n": 70,
+   "slug": "70-otsu",
+   "ja": "大津",
+   "shuku": 69,
+   "artist": null,
+   "mvp": false,
+   "status": "todo"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+# 原始博物館掃描——遊戲只需要 game-assets/，溯源見 assets/sources.json
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.tif
+assets/*.tiff
+
+__pycache__/
+*.pyc
+.DS_Store
