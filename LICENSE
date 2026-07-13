@@ -21,8 +21,12 @@ assets/sources.json. The overworld scan (Hokusai, "Kisoji meisho ichiran",
 Kobe City Museum) is licensed CC BY-ND 4.0 and is used unmodified, resized
 only.
 
-Music: none bundled. The background music is synthesised in-browser with the
-Web Audio API (see index.html) — no audio files, no third-party licence.
+Music: the three bundled tracks are third-party works under licences that
+permit redistribution — CC BY 4.0 and CC0. They are not covered by the MIT
+licence above, and CC BY obliges you to keep their attribution: see
+game-assets/bgm/CREDITS.md, which travels with the files. (A fourth piece of
+music, the 8-bit walking theme, is synthesised in-browser with the Web Audio
+API and is part of the source code.)
 
 Font: the embedded subset of Yuji Boku is licensed under the SIL Open Font
 License 1.1 — see game-assets/fonts/OFL.txt.
