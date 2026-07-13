@@ -352,7 +352,13 @@
 
 <div id="map" class="view active">
   <div id="map-scroll"><div id="map-wrap">
-    <img src="game-assets/overworld.jpg" alt="北斎《木曽路名所一覧》1819・神戸市立博物館藏" width="1600" height="1190">
+    <!-- 地圖鋪滿捲動容器（width:100%），所以瀏覽器要挑的是「視窗寬 × DPR」：
+         1440 視窗的 retina 需要 2880px，普通螢幕只要 1440px。交給 srcset 決定，
+         別讓非 retina 的人白白吞 3.1 MB。兩張都由 tools/make-overworld.py 產出。 -->
+    <img src="game-assets/overworld.jpg"
+         srcset="game-assets/overworld.jpg 1600w, game-assets/overworld@2x.jpg 3200w"
+         sizes="(min-width: 900px) 100vw, 900px"
+         alt="北斎《木曽路名所一覧》1819・神戸市立博物館藏" width="1600" height="1190">
   </div></div>
 </div>
 

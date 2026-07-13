@@ -57,6 +57,7 @@ python3 -m http.server 8000   # 然後開 http://localhost:8000
 - [`tools/plate.py`](tools/plate.py) — 自動偵測畫芯，去紙邊但保住題箋與朱印
 - [`tools/make-palette.py`](tools/make-palette.py) — k-means 抽色 + 朱色保留槽
 - [`tools/check-details.py`](tools/check-details.py) — 把細節座標畫回真跡，逐張核對點得到點不到
+- [`tools/make-overworld.py`](tools/make-overworld.py) — 由 7898px 源檔產出 1600/3200 兩種寬度（srcset 按 DPR 挑）
 
 ## License
 
