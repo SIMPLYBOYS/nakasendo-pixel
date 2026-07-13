@@ -59,7 +59,9 @@ def main():
         print("全部已存在")
         return
     print(f"{len(todo)} 站待抓（{WIDTH}px 縮圖）\n")
-    urls = thumb_urls([s["scan"]["title"] for s in todo])
+    # pinned 的站不在 Commons（草津・大津 只有 MFA 有），scan.url 就是直連
+    urls = thumb_urls([s["scan"]["title"] for s in todo if not s["scan"].get("pinned")])
+    urls.update({s["scan"]["title"]: s["scan"]["url"] for s in todo if s["scan"].get("pinned")})
 
     for s in todo:
         out = ROOT / f"assets/{s['slug']}.jpg"

@@ -1048,7 +1048,16 @@
    "shuku": 68,
    "artist": "広重",
    "mvp": false,
-   "status": "todo"
+   "status": "assets",
+   "scan": {
+    "px": "2000x1390",
+    "license": "CC0 / public domain",
+    "title": "No. 68 (sic; actually 69), the Crossroad at Kusatsu (Kusatsu oiwake)",
+    "url": "https://data.ukiyo-e.org/mfa/images/sc208972.jpg",
+    "holder": "Museum of Fine Arts, Boston（via ukiyo-e.org）",
+    "pinned": true,
+    "note": "Commons 與 NDL 皆無此幅；MFA 是可得的最佳來源，但 ukiyo-e.org 交付上限 2000px——剛好踩在 pipeline 地板上，其餘 68 站中位數 4470px。"
+   }
   },
   {
    "n": 70,
@@ -1057,7 +1066,16 @@
    "shuku": 69,
    "artist": "広重",
    "mvp": false,
-   "status": "todo"
+   "status": "assets",
+   "scan": {
+    "px": "2000x1374",
+    "license": "CC0 / public domain",
+    "title": "No. 70, Ôtsu, from the series The Sixty-nine Stations of the Kisokaidô Road",
+    "url": "https://data.ukiyo-e.org/mfa/images/sc156765.jpg",
+    "holder": "Museum of Fine Arts, Boston（via ukiyo-e.org）",
+    "pinned": true,
+    "note": "同上：唯一可得來源，2000px。"
+   }
   }
  ]
 }

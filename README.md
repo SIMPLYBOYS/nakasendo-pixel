@@ -11,12 +11,12 @@
 
 版權：英泉歿 1848、広重歿 1858、北斎歿 1849 —— 全系列 public domain。
 
-## 現況：Phase 0 素材普查 ✅ 通過
+## 現況：素材 70/70 到齊，MVP 可玩
 
 兩個未驗證風險都拆掉了 →  **[完整報告](docs/phase0-asset-survey.md)**
 
 - **Overworld**（第一風險）：北斎《木曽路名所一覧》**7898×5873** 可取得，比東海道的 overworld（2500px）還高。Commons 上沒有，唯一來源是神戸市立博物館的 IIIF（授權 CC BY-ND —— 原樣縮放使用合規，像素化不行；東海道的 overworld 本來就沒像素化，所以不受影響）。
-- **宿場系列**：**68/70** 有 ≥2000px 橫大判掃描（NDL 為主，洗馬有 LOC 8991px）。缺口是終點段的草津、大津。
+- **宿場系列**：**70/70 全數到齊**。NDL 為主（~4470px），洗馬有 LOC 8991px；終點段的草津、大津 Commons 與 NDL 皆無，最後在波士頓美術館找到（2000px，剛好踩在 pipeline 地板上）。
 - **MVP 切片（日本橋 → 軽井沢 19 站）**：素材全綠，每站 3 個隱藏細節逐張看圖標出。
 - **繪師歸屬**：英泉 24 / 廣重 46（+ 中津川第二版）—— 與文獻公認的 24/47 吻合。
 
@@ -34,7 +34,7 @@ python3 -m http.server 8000   # 然後開 http://localhost:8000
 ### Phase 1 進行中
 
 - [x] overworld 的 IIIF tile 抓取器（[tools/fetch-overworld.py](tools/fetch-overworld.py)，7898×5873）
-- [x] **色盤：單盤成立** —— 合併色盤 vs 各繪師本家色盤，平均額外誤差只有 +1.0%，
+- [x] **色盤：單盤成立** —— 合併色盤 vs 各繪師本家色盤，平均額外誤差僅 +3%，
       不值得為此把場景與圖鑑分流成兩套（[報告](docs/palette-report.md)）
 - [x] 〈洗馬〉月夜通過量化 pipeline —— 東海道沒驗過的光線 case
 - [x] MVP 19 站（日本橋→軽井沢）遊戲資產產出
@@ -47,7 +47,6 @@ python3 -m http.server 8000   # 然後開 http://localhost:8000
       但兩站都夾在已驗證的鄰站之間
 - [ ] 延伸切片：木曽谷十三宿（洗馬→馬籠）的作者內容已完成，存於
       [`data/stations-kiso-authored.js`](data/stations-kiso-authored.js)，接上前需重驗 map 座標
-- [ ] 補草津、大津（NDL / LOC / Rijksmuseum）
 
 引擎與 pipeline 直接重用 tokaido-pixel，本作是 content pack 不是新遊戲；唯一程式改動是加「路線」維度。分析全文見 vault `research/中山道-木曾街道六十九次-像素遊戲擴充分析.md`。
 

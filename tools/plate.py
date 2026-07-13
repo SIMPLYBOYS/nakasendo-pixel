@@ -23,6 +23,10 @@ def detect(im: Image.Image) -> tuple[int, int, int, int]:
     g = np.asarray(im.convert("L").resize((400, 400), Image.Resampling.LANCZOS), dtype=np.float64)
 
     def span(std):
+        # 先平滑：掃描機常在紙的最外緣留一條暗線，單行的尖峰會讓「最外側跨越點」
+        # 直接貼齊圖緣、整張都不裁（大津就是這樣只裁掉 5%）。平滑掉孤立尖峰。
+        k = 5
+        std = np.convolve(std, np.ones(k) / k, mode="same")
         # 門檻取「最平靜的紙邊」和「最花的畫芯」之間；紙邊 std 接近 0
         thr = std.min() + (std.max() - std.min()) * 0.15
         on = np.flatnonzero(std > thr)

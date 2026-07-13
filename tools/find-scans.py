@@ -154,6 +154,10 @@ def main():
 
     results, gaps = {}, []
     for s in stations:
+        # 草津・大津 只在 MFA 有（Commons 與 NDL 皆無），來源手動釘住——別讓 Commons 掃描把它們洗掉
+        if s.get("scan", {}).get("pinned"):
+            print(f"  PIN {s['n']:>2} {s['ja']:<5} {s['artist']:<3} {s['scan']['px']}  {s['scan']['holder']}", flush=True)
+            continue
         ja, romaji = s["ja"], s["slug"].split("-", 1)[1]
         hits = list(by_num.get(s["n"], []))
         seen = {h["title"] for h in hits}
