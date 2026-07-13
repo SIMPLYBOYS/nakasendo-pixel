@@ -1051,12 +1051,13 @@
    "status": "authored",
    "scan": {
     "px": "2000x1390",
-    "license": "CC0 / public domain",
+    "license": "原作 public domain；掃描的權利狀態有爭議——見 rights_note",
+    "rights_note": "本欄原本寫「CC0 / public domain」，那是憑空來的：MFA 從未如此宣告，交付檔案的 ukiyo-e.org 也沒有任何授權聲明。MFA 的 Terms and Conditions 主張的正好相反——「The Images are not simple reproductions of the works depicted and are protected by copyright」，並禁止再散佈。本專案仍將掃描視為 public domain，依據是「2D 忠實複製不產生新著作權」：Bridgeman v. Corel, 36 F. Supp. 2d 191 (S.D.N.Y. 1999)，以及 US Copyright Office Compendium §906.1（「a mere copy of a work of art」不具著作權）——這也是 Wikimedia Commons 大量收錄館藏掃描的法理基礎。另：MFA 的條款拘束的是在其網站上接受條款的人，本檔案取自 ukiyo-e.org。這是一個法律判斷，不是 MFA 的授權；若 MFA 提出異議，最省事的做法是換來源或撤下這兩幅。原作本身（広重歿 1858）的 public domain 地位則毫無疑問。",
     "title": "No. 68 (sic; actually 69), the Crossroad at Kusatsu (Kusatsu oiwake)",
     "url": "https://data.ukiyo-e.org/mfa/images/sc208972.jpg",
     "holder": "Museum of Fine Arts, Boston（via ukiyo-e.org）",
     "pinned": true,
-    "note": "Commons 與 NDL 皆無此幅；MFA 是可得的最佳來源，但 ukiyo-e.org 交付上限 2000px——剛好踩在 pipeline 地板上，其餘 68 站中位數 4470px。"
+    "note": "Commons 與 NDL 皆無此幅（2026-07 再查一次，仍然沒有）；MFA 是唯一可得來源，但 ukiyo-e.org 交付上限 2000px——剛好踩在 pipeline 地板上，其餘 68 站中位數 4470px。"
    }
   },
   {
@@ -1069,7 +1070,8 @@
    "status": "authored",
    "scan": {
     "px": "2000x1374",
-    "license": "CC0 / public domain",
+    "license": "原作 public domain；掃描的權利狀態有爭議——見 69-kusatsu 的 rights_note",
+    "rights_note": "同 69 草津：MFA 主張其掃描的著作權並禁止再散佈，「CC0」是本專案自己貼上去的錯誤標籤。詳見 69-kusatsu 的 rights_note。",
     "title": "No. 70, Ôtsu, from the series The Sixty-nine Stations of the Kisokaidô Road",
     "url": "https://data.ukiyo-e.org/mfa/images/sc156765.jpg",
     "holder": "Museum of Fine Arts, Boston（via ukiyo-e.org）",

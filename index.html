@@ -412,9 +412,12 @@
   <h2>出典</h2>
   <dl>
     <dt>宿場繪　渓斎英泉・歌川広重《木曽海道六拾九次之内》1835–38</dt>
-    <dd>Public domain（英泉歿 1848・広重歿 1858）。掃描以国立国会図書館デジタルコレクション為主，
+    <dd>原作 public domain（英泉歿 1848・広重歿 1858）。掃描以国立国会図書館デジタルコレクション為主，
       〈日本橋〉出自 Bibliothèque nationale de France，〈草津〉〈大津〉出自 Museum of Fine Arts, Boston。
-      逐幅溯源見 <a href="https://github.com/SIMPLYBOYS/nakasendo-pixel/blob/main/data/stations.json">data/stations.json</a>。</dd>
+      逐幅溯源見 <a href="https://github.com/SIMPLYBOYS/nakasendo-pixel/blob/main/data/stations.json">data/stations.json</a>。<br>
+      掃描的權利狀態不是全都一樣：MFA 主張其攝影的著作權、BnF 對商業再利用收費。本作依「2D 忠實複製
+      不產生新著作權」（<a href="https://en.wikipedia.org/wiki/Bridgeman_Art_Library_v._Corel_Corp.">Bridgeman v. Corel</a>）
+      視之為 public domain——那是判斷，不是館方的授權，逐幅的權利說明記在 <code>rights_note</code> 欄。</dd>
 
     <dt>鳥瞰圖　葛飾北斎《木曽路名所一覧》1819</dt>
     <dd>提供：<a href="https://www.kobecitymuseum.jp/collection/detail?heritage=365298">神戸市立博物館</a>（経 文化遺産オンライン）。
@@ -1072,7 +1075,7 @@ const STATIONS = [
       "從這裡到京都的最後兩站（草津・大津），中山道與東海道是同一條路、同一批宿場。",
       "本幅 Commons 與 NDL 皆無，掃描來自波士頓美術館（2000px，全系列最低）。",
     ],
-    credit:"掃描：Museum of Fine Arts, Boston（public domain）· via ukiyo-e.org" },
+    credit:"原作 public domain（広重歿 1858）· 掃描：Museum of Fine Arts, Boston（via ukiyo-e.org）——MFA 主張其掃描的著作權，本作依「2D 忠實複製不生新著作權」使用；權利說明見 data/stations.json" },
   { slug:"70-otsu", ja:"大津", pic:"街道", map:[.452,.114],
     details:[[.28,.76,"拉著米俵的牛車"],[.48,.27,"飛過街上的雁群"],[.55,.57,"街尾的琵琶湖"]],
     desc:"街的盡頭就是琵琶湖。牛車拉著米俵往京都去，雁群橫過天空——木曽街道六十九次，到此走完。再三里，就是三条大橋。",
@@ -1081,7 +1084,7 @@ const STATIONS = [
       "大津同時是東海道的第五十三站——兩條路走到最後，是同一個終點。",
       "本幅掃描同樣來自波士頓美術館（2000px）。",
     ],
-    credit:"掃描：Museum of Fine Arts, Boston（public domain）· via ukiyo-e.org" },
+    credit:"原作 public domain（広重歿 1858）· 掃描：Museum of Fine Arts, Boston（via ukiyo-e.org）——MFA 主張其掃描的著作權，本作依「2D 忠實複製不生新著作權」使用；權利說明見 data/stations.json" },
 ];
 
 // 道中事件：[權重, 加算日數, 文字, 區段?]
@@ -1784,7 +1787,8 @@ $("btn-reset").onclick = () => {
    曲子的授權必須允許「再散佈」，不只是「使用」。這是公開 repo 的專案獨有的門檻：
    任何人都能 fork 或直接下載 game-assets/bgm/*.mp3。日系素材站（DOVA-SYNDROME、
    魔王魂、甘茶の音楽工房…）幾乎都允許嵌進遊戲、卻禁止散佈音檔本身——用得了、放不進 repo。
-   所以三首全部換成 CC BY 4.0 / CC0：CC 明文允許再散佈，附上出處即可（見 <dialog id=credits>）。
+   所以四首全部換成 CC BY 4.0：CC 明文允許再散佈，附上出處即可——但標註是義務，
+   而且要標在使用者看得到的地方（見 <dialog id=credits> 與 game-assets/bgm/CREDITS.md）。
    合成曲留著當備援：mp3 全掛掉時仍有聲音。
    瀏覽器規定要有使用者手勢才能出聲：第一次點擊時啟動；♪ 鈕開關並記憶偏好 */
 const BGM_KEY = "nakasendo-bgm";
@@ -1839,7 +1843,7 @@ function bgmChiptune() {   // 三首 mp3 都載不到時的合成備援
   bgm.beat = 0;
   bgm.timer = setInterval(bgmTick, 150);
 }
-// 三曲輪播。全數 CC BY 4.0 / CC0——授權與出處見「出典」。
+// 四曲輪播（一圈 8:58）。全數 CC BY 4.0——授權與出處見「出典」。
 const BGM_LIST = [
   "game-assets/bgm/01-shinrin-yoku.mp3",      // Patrick de Arteaga, CC BY 4.0（三味線＋尺八＋箏）
   "game-assets/bgm/02-sakura-variation.mp3",  // WuxiaScrub, CC BY 4.0（〈さくらさくら〉變奏）
