@@ -1732,6 +1732,10 @@ $("btn-reset").onclick = () => {
    等比縮放 + 標註提供者才是合規範圍，所以這裡只用靜態圖。 */
 
 /* ---- BGM：Web Audio 原創 8-bit 和風道中曲（陽音階，零音檔）----
+   原本輪播三首 DOVA-SYNDROME 的 mp3，拿掉了。DOVA 允許把曲子用在遊戲裡（商用亦可、
+   不必標註），但禁止「エンドユーザーが音声ファイルに容易にアクセスできる状態」的散佈——
+   公開 repo 裡的 mp3 誰都能 fork 或直接下載，正是那個狀態。使用可以，散佈不行；
+   原始碼公開的專案沒辦法只使用不散佈，所以只留自己合成的曲子：零音檔、零授權負擔。
    瀏覽器規定要有使用者手勢才能出聲：第一次點擊時啟動；♪ 鈕開關並記憶偏好 */
 const BGM_KEY = "nakasendo-bgm";
 const bgm = { ctx: null, master: null, on: localStorage.getItem(BGM_KEY) !== "off", beat: 0, timer: 0 };
@@ -1774,7 +1778,7 @@ function bgmTick() {
     bgm.nextTime += BEAT * 0.5;
   }
 }
-function bgmChiptune() {   // 找不到 bgm.mp3 時的合成備援
+function bgmInit() {   // AudioContext 必須等到使用者手勢之後才建得起來
   if (bgm.ctx) return;
   const c = new (window.AudioContext || window.webkitAudioContext)();
   bgm.ctx = c;
@@ -1785,36 +1789,10 @@ function bgmChiptune() {   // 找不到 bgm.mp3 時的合成備援
   bgm.beat = 0;
   bgm.timer = setInterval(bgmTick, 150);
 }
-// DOVA-SYNDROME 三曲輪播（下町屋台で食べ歩き／のんびり旅風情／江戸のぶらり旅）
-const BGM_LIST = [
-  "game-assets/bgm/01-shitamachi-yatai.mp3",
-  "game-assets/bgm/02-nonbiri-tabifuzei.mp3",
-  "game-assets/bgm/03-edo-burari.mp3",
-];
-// 頁面載入就先挑好隨機起始曲並預載——下載不需要使用者手勢，只有播放需要，
-// 首次點擊時歌曲已在緩衝，不用再等 mp3 下載
-bgm.track0 = Math.floor(Math.random() * BGM_LIST.length);
-bgm.warm = new Audio(BGM_LIST[bgm.track0]);
-bgm.warm.preload = "auto";
-function bgmPlay(i) {
-  bgm.track = ((i % BGM_LIST.length) + BGM_LIST.length) % BGM_LIST.length;
-  const a = (bgm.warm && bgm.track === bgm.track0) ? bgm.warm : new Audio(BGM_LIST[bgm.track]);
-  bgm.warm = null;   // 預載體只用一次
-  a.volume = 0.4;
-  a.onended = () => bgmPlay(bgm.track + 1);
-  const skip = () => { if (++bgm.fails >= BGM_LIST.length) bgmChiptune(); else bgmPlay(bgm.track + 1); };
-  a.onerror = skip;
-  a.play().then(() => { bgm.fails = 0; bgm.audio = a; }).catch(err => {
-    // 被自動播放政策擋下（如手勢效力不足）≠ 檔案壞了：不換曲，等下一次點擊重試
-    if (err && err.name === "NotAllowedError") { bgm.started = false; bgm.warm = a; return; }
-    skip();
-  });
-}
 function bgmStart() {
   if (bgm.started || !bgm.on) return;
   bgm.started = true;
-  bgm.fails = 0;
-  bgmPlay(bgm.track0);   // 起點＝已預載的那首
+  bgmInit();
 }
 function bgmSet(on) {
   bgm.on = on;
@@ -1822,12 +1800,10 @@ function bgmSet(on) {
   $("btn-bgm").classList.toggle("off", !on);
   if (on) {
     bgmStart();
-    bgm.audio?.play();
-    bgm.ctx?.resume();
+    bgm.ctx?.resume();   // 分頁切走時瀏覽器會 suspend，切回來要喚醒
     if (bgm.master) bgm.master.gain.value = 0.5;
   } else {
-    bgm.audio?.pause();
-    if (bgm.master) bgm.master.gain.value = 0;
+    if (bgm.master) bgm.master.gain.value = 0;   // 靜音而不停振盪器：再開時不必重建 ctx
   }
 }
 $("btn-bgm").classList.toggle("off", !bgm.on);

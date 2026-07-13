@@ -12,10 +12,20 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-The above license applies to the source code only. Artwork is public domain
-(see assets/sources.json for provenance). Bundled music is licensed from
-DOVA-SYNDROME and is not covered by this license; the embedded font subset
-(Yuji Boku) is licensed under the SIL Open Font License 1.1.
+The above license applies to the source code only.
+
+Artwork: the ukiyo-e prints are public domain (Eisen d. 1848, Hiroshige
+d. 1858, Hokusai d. 1849). Scan provenance for the 69 station prints is
+recorded per-station in data/stations.json; the overworld map is recorded in
+assets/sources.json. The overworld scan (Hokusai, "Kisoji meisho ichiran",
+Kobe City Museum) is licensed CC BY-ND 4.0 and is used unmodified, resized
+only.
+
+Music: none bundled. The background music is synthesised in-browser with the
+Web Audio API (see index.html) — no audio files, no third-party licence.
+
+Font: the embedded subset of Yuji Boku is licensed under the SIL Open Font
+License 1.1 — see game-assets/fonts/OFL.txt.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
