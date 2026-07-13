@@ -308,8 +308,8 @@
    "ja": "沓掛",
    "shuku": 19,
    "artist": "英泉",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4419x3053",
     "license": "Public domain",
@@ -323,8 +323,8 @@
    "ja": "追分",
    "shuku": 20,
    "artist": "英泉",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4472x3050",
     "license": "Public domain",
@@ -338,8 +338,8 @@
    "ja": "小田井",
    "shuku": 21,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4460x3074",
     "license": "Public domain",
@@ -353,8 +353,8 @@
    "ja": "岩村田",
    "shuku": 22,
    "artist": "英泉",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4467x3092",
     "license": "Public domain",
@@ -368,8 +368,8 @@
    "ja": "塩名田",
    "shuku": 23,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4504x3090",
     "license": "Public domain",
@@ -383,8 +383,8 @@
    "ja": "八幡",
    "shuku": 24,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4467x3055",
     "license": "Public domain",
@@ -398,8 +398,8 @@
    "ja": "望月",
    "shuku": 25,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4423x2997",
     "license": "Public domain",
@@ -413,8 +413,8 @@
    "ja": "芦田",
    "shuku": 26,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4488x3103",
     "license": "Public domain",
@@ -428,8 +428,8 @@
    "ja": "長久保",
    "shuku": 27,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4424x3068",
     "license": "Public domain",
@@ -443,8 +443,8 @@
    "ja": "和田",
    "shuku": 28,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4485x3062",
     "license": "Public domain",
@@ -458,8 +458,8 @@
    "ja": "下諏訪",
    "shuku": 29,
    "artist": "広重",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4472x3038",
     "license": "Public domain",
@@ -473,8 +473,8 @@
    "ja": "塩尻",
    "shuku": 30,
    "artist": "英泉",
-   "mvp": false,
-   "status": "assets",
+   "mvp": true,
+   "status": "authored",
    "scan": {
     "px": "4435x3054",
     "license": "Public domain",
@@ -488,7 +488,7 @@
    "ja": "洗馬",
    "shuku": 31,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4401x3014",
@@ -503,7 +503,7 @@
    "ja": "本山",
    "shuku": 32,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4432x3057",
@@ -518,7 +518,7 @@
    "ja": "贄川",
    "shuku": 33,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4439x2986",
@@ -533,7 +533,7 @@
    "ja": "奈良井",
    "shuku": 34,
    "artist": "英泉",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4430x3075",
@@ -548,7 +548,7 @@
    "ja": "藪原",
    "shuku": 35,
    "artist": "英泉",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4440x3071",
@@ -563,7 +563,7 @@
    "ja": "宮ノ越",
    "shuku": 36,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4418x3060",
@@ -578,7 +578,7 @@
    "ja": "福島",
    "shuku": 37,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4494x3057",
@@ -593,7 +593,7 @@
    "ja": "上松",
    "shuku": 38,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4423x3013",
@@ -608,7 +608,7 @@
    "ja": "須原",
    "shuku": 39,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4440x3049",
@@ -623,7 +623,7 @@
    "ja": "野尻",
    "shuku": 40,
    "artist": "英泉",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4456x3053",
@@ -638,7 +638,7 @@
    "ja": "三留野",
    "shuku": 41,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4462x3069",
@@ -653,7 +653,7 @@
    "ja": "妻籠",
    "shuku": 42,
    "artist": "広重",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4441x3059",
@@ -668,7 +668,7 @@
    "ja": "馬籠",
    "shuku": 43,
    "artist": "英泉",
-   "mvp": false,
+   "mvp": true,
    "status": "authored",
    "scan": {
     "px": "4473x3045",
