@@ -29,7 +29,7 @@ python3 -m http.server 8000   # 然後開 http://localhost:8000
 | | |
 |---|---|
 | ![鳥瞰圖](docs/screenshots/overworld.png) | ![場景](docs/screenshots/scene.png) |
-| *北斎《木曽路名所一覧》當 overworld——江戶出發，翻過碓氷峠* | *開場：英泉〈日本橋 雪之曙〉。每站找三個藏在畫裡的細節* |
+| *北斎《木曽路名所一覧》當 overworld——44 站的位置是逐張讀圖上的地名卡片定出來的* | *開場：英泉〈日本橋 雪之曙〉。每站找三個藏在畫裡的細節* |
 
 ### Phase 1 進行中
 

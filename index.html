@@ -900,22 +900,30 @@ function updateHud() {
 function buildMap() {
   const wrap = $("map-wrap");
   wrap.querySelectorAll(".node, .node-label").forEach(n => n.remove());
+  const placed = [];
   STATIONS.forEach((s, i) => {
+    const [x, y] = s.map;
     const done = isDone(s);
     const reachable = i === 0 || isDone(STATIONS[i-1]);
     const b = document.createElement("button");
     b.className = "node " + (done ? "done" : reachable ? "next" : "locked");
     b.textContent = i + 1;
-    b.style.left = s.map[0]*100 + "%";
-    b.style.top = s.map[1]*100 + "%";
+    b.style.left = x*100 + "%";
+    b.style.top = y*100 + "%";
     if (done || reachable) b.onclick = () => openScene(i);
     wrap.appendChild(b);
     const l = document.createElement("span");
     l.className = "node-label";
     l.textContent = s.ja;
-    l.style.left = s.map[0]*100 + "%";
-    l.style.top = s.map[1]*100 + "%";
+    // 兩站挨太近時直書名籤會疊在一起（軽井沢與沓掛在圖上只差 0.02——沓掛本來就在
+    // 軽井沢隔壁）。座標是逐張讀圖上的地名卡片定出來的，不能為了好看去挪節點，
+    // 所以只把「標籤」往旁邊推開，節點留在真值上。
+    const near = placed.filter(p => Math.abs(p.x - x) < .03 && Math.abs(p.y - y) < .04);
+    const push = near.length * 17 * (near.some(p => p.x > x) ? -1 : 1);
+    l.style.left = push ? `calc(${x*100}% + ${push}px)` : x*100 + "%";
+    l.style.top = y*100 + "%";
     wrap.appendChild(l);
+    placed.push({ x, y });
   });
   updateHud();
 }
