@@ -423,7 +423,7 @@
 
 <div id="finale">
   <div id="finale-card">
-    <div class="fin-sub">木曽街道六十九次・日本橋より碓氷峠を越え</div>
+    <div class="fin-sub">木曽街道六十九次・日本橋より木曾路を抜け馬籠まで</div>
     <div class="fin-title">完歩之證</div>
     <p class="fin-days" id="fin-days"></p>
     <div class="fin-sub">雅號授與</div>
@@ -808,20 +808,51 @@ const STATIONS = [
     credit:"掃描：国立国会図書館デジタルコレクション（public domain）· via Wikimedia Commons" },
 ];
 
-// 道中事件：[權重, 加算日數, 文字]
-// 中山道當年被選走，正是為了避開東海道的大川渡涉——所以東海道的招牌事件「川止め」
-// 在這裡不存在，取而代之的是山線自己的麻煩：峠、雪、熊。
+// 道中事件：[權重, 加算日數, 文字, 區段?]
+// 區段 = [起, 迄]（版畫編號，含端點）；省略 = 全程通用。事件寫的是「走到這一站的路上」。
+//
+// 為什麼要分區：峠越え不該在關東平原的平地上發生，福島關所也不該在還沒進木曾谷時
+// 就查你的手形。中山道當年被選走正是為了避開東海道的大川渡涉——所以「川止め」在這裡
+// 幾乎不存在，只留給戸田川那一個渡口；山線自己的麻煩是峠、雪、關所與熊。
+const PLAIN = [1, 14], USUI = [15, 19], SHINANO = [20, 31], KISO = [32, 44];
 const EVENTS = [
+  // 全程
   [5, 0, "天朗氣清，一路順風。"],
-  [2, 0, "遇上木曾馬幫，讓你搭了一程馱馬，腳程飛快。"],
-  [1, 0, "山中霧散，御嶽山忽然現身——旅人皆駐足合掌。"],
-  [2, 1, "峠越え。坡陡路長，天黑前只走到半山的立場茶屋。"],
   [2, 1, "草鞋磨穿，在宿場尋鞋店耽擱了時辰。"],
-  [1, 1, "福島關所查驗手形，「入鐵砲出女」查得極嚴，排了長隊。"],
-  [1, 1, "谷底起霧，看不清前路，只得在旅籠多歇一晚。"],
-  [1, 2, "大雪封峠！山道盡沒，只能等雪停。"],
+  [1, 1, "本陣被大名行列包下，只得走到隔壁宿場投宿。"],
   [1, 2, "皇女和宮下向的行列經過，庶民一律讓道，整整候了兩日。"],
+  // 關東平野（日本橋→高崎）
+  [2, 0, "平原坦途，一日走了十里。", PLAIN],
+  [1, 0, "桶川的紅花田開得正盛，滿地胭脂色。", PLAIN],
+  [1, 0, "宿場正逢六齋市，順道補足了乾糧。", PLAIN],
+  [1, 1, "戸田川水漲，渡船停擺——中山道少數會川止め的渡口。", PLAIN],
+  // 碓氷（板鼻→軽井沢）
+  [2, 1, "碓氷峠越え。坡陡路長，天黑前只走到半山的立場茶屋。", USUI],
+  [1, 1, "碓氷關所查驗手形，排了長隊。", USUI],
+  [1, 2, "峠上大雪，山道盡沒，只能等雪停。", USUI],
+  [1, 0, "峠頂的熊野權現前歇腳——一腳踏在上州，一腳踏在信州。", USUI],
+  // 信濃高地（沓掛→塩尻）
+  [2, 1, "和田峠越え。中山道最高的一道，走到天黑還沒下山。", SHINANO],
+  [1, 2, "大雪封峠！和田到下諏訪五里十八町，沿途只有接待茶屋——只能等雪停。", SHINANO],
+  [1, 0, "淺間山冒煙，旅人皆駐足遙望。", SHINANO],
+  [1, 1, "淺間山降灰，路面濕滑，馬走不快。", SHINANO],
+  [1, 0, "諏訪湖結出御神渡り，冰脊隆起如龍脊——今年是豐年。", SHINANO],
+  // 木曾谷（洗馬→馬籠）
+  [2, 0, "遇上木曾馬幫，讓你搭了一程馱馬，腳程飛快。", KISO],
+  [1, 1, "福島關所查驗手形，「入鐵砲出女」查得極嚴，排了長隊。", KISO],
+  [1, 1, "鳥居峠越え。分水嶺上風大，走得極慢。", KISO],
+  [1, 0, "山中霧散，御嶽山忽然現身——旅人皆駐足合掌。", KISO],
+  [1, 1, "谷底起霧，看不清前路，只得在旅籠多歇一晚。", KISO],
+  [1, 1, "尾張藩的山方役人盤查檜木盜伐——「檜一本、首一つ」，行李被翻了個遍。", KISO],
+  [1, 2, "山道遇熊，退回前一站的宿場，等天亮再走。", KISO],
 ];
+// 自我檢查：每一站都得有夠多事件可抽，不然玩家會連著三站看到同一句
+STATIONS.forEach((s, i) => {
+  if (!i) return;
+  const n = i + 1;
+  const k = EVENTS.filter(([, , , z]) => !z || (n >= z[0] && n <= z[1])).length;
+  console.assert(k >= 6, `${s.ja}（第 ${n} 幅）只有 ${k} 個事件可抽`);
+});
 const HIT_R = 0.075;   // 命中半徑（相對場景寬）
 const MISS_HINT = 3;   // 失手幾次後給提示圈
 
@@ -889,8 +920,12 @@ function travelTo(i) {
   if (state.visited.includes(s.slug)) return;
   state.visited.push(s.slug);
   if (i > 0) {
+    const n = i + 1;   // 版畫編號：事件寫的是「走到這一站的路上」，用終點站定區段
     let pool = [];
-    EVENTS.forEach(([w, d, t]) => { for (let k = 0; k < w; k++) pool.push([d, t]); });
+    EVENTS.forEach(([w, d, t, z]) => {
+      if (z && (n < z[0] || n > z[1])) return;
+      for (let k = 0; k < w; k++) pool.push([d, t]);
+    });
     const [extra, text] = pool[Math.floor(Math.random() * pool.length)];
     state.days += 1 + extra;
     state.log = text + (extra > 0 ? `（多耗 ${extra} 日）` : "");
@@ -1231,8 +1266,11 @@ function finaleSeq() {
     m.style.left = STATIONS[i].map[0]*100 + "%";
     m.style.top = STATIONS[i].map[1]*100 + "%";
     nodes[i].scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-    labels[i].classList.add("lit");
-    setTimeout(() => labels[i].classList.remove("lit"), 650);
+    // 先抓住這一站的 label：hop 每 460ms 一跳、燈亮 650ms，等熄燈時 i 已經跑掉了。
+    // 直接寫 labels[i] 會熄到下一站的燈，最後一站更會 labels[undefined] 爆掉。
+    const lit = labels[i];
+    lit.classList.add("lit");
+    setTimeout(() => lit.classList.remove("lit"), 650);
     badge.textContent = `道中第 ${Math.max(1, Math.round(state.days * i / lastIdx))} 日`;
     timer = setTimeout(hop, 460);
   };
