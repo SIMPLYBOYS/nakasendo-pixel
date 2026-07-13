@@ -22,14 +22,22 @@
 
 ### 玩玩看
 
+**線上直接玩 → [simplyboys.github.io/nakasendo-pixel](https://simplyboys.github.io/nakasendo-pixel/)**
+
+或在本機跑：
+
 ```bash
 python3 -m http.server 8000   # 然後開 http://localhost:8000
 ```
 
 | | |
 |---|---|
-| ![鳥瞰圖](docs/screenshots/overworld.png) | ![場景](docs/screenshots/scene.png) |
-| *北斎《木曽路名所一覧》當 overworld——70 站的位置是逐張讀圖上的地名卡片定出來的* | *開場：英泉〈日本橋 雪之曙〉。每站找三個藏在畫裡的細節* |
+| ![鳥瞰圖](game-assets/overworld.jpg) | ![場景](docs/screenshots/scene.png) |
+| *overworld：北斎《木曽路名所一覧》1819（[神戸市立博物館](https://www.kobecitymuseum.jp/collection/detail?heritage=365298)藏・[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)）。遊戲裡 70 站的節點就疊在這張圖上——位置是逐張讀圖上的地名卡片定出來的* | *開場：英泉〈日本橋 雪之曙〉。每站找三個藏在畫裡的細節* |
+
+> 這裡放的是**原圖**，不是遊戲截圖。原本這格是一張把節點烙進北斎圖裡的 PNG——
+> 那張圖的授權是 CC BY-ND（禁止改作），執行時用 DOM 把節點疊上去沒問題（沒有動到原圖），
+> 但把疊合結果存成一個檔案散佈出去，就是 ND 條款下最站不住的一種用法。
 
 ### Phase 1 完成
 
