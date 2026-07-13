@@ -102,11 +102,21 @@ def is_series(c):
     return ASPECT[0] <= c["width"] / c["height"] <= ASPECT[1]
 
 
-def rank(c):
-    """NDL 同一幅有兩版：6144x4096 是連色卡與裱框一起拍的原始檔，
-    『-crd』是已裁到畫框的（~4400px，仍遠高於地板）。裁好的優先，不要只挑最大張。"""
+def rank(c, ja=None):
+    """排序鍵，由重到輕：
+
+    1. 標題裡有沒有本站站名 —— **版上的編號會撞號**。〈恵智川〉（愛知川）與〈武佐〉
+       兩張都刻著「六拾六」，〈鳥居本〉刻「六拾三」但實際排第 64。只看編號的話，
+       66 號會被較大張的武佐（4505px）搶走，愛知川就沒圖了（踩過）。
+    2. NDL 同一幅有兩版：6144x4096 是連色卡與裱框一起拍的原始檔，
+       『-crd』是已裁到畫框的（~4400px，仍遠高於地板）。裁好的優先。
+    3. 最後才比大小——不要只挑最大張。
+
+    站名比不到就退回編號＋大小（版上刻的常是異體字：塩なた・あし田・大久手・みゑじ…）。
+    """
+    named = bool(ja) and ja in c["title"]
     cropped = "-crd" in c["title"] or "crd." in c["title"]
-    return (not cropped, -c["width"])
+    return (not named, not cropped, -c["width"])
 
 
 def artist_of(c):
@@ -166,7 +176,7 @@ def main():
                 continue
             if ja in c["title"] or re.search(rf"\b{romaji}\b", c["title"], re.I):
                 hits.append(c); seen.add(c["title"])
-        hits.sort(key=rank)
+        hits.sort(key=lambda c: rank(c, ja))
         results[s["slug"]] = hits[:5]
 
         best = hits[0]["width"] if hits else 0
@@ -182,6 +192,14 @@ def main():
             gaps.append((s["ja"], best))
         flag = "OK " if best >= MIN_PX else ("LOW" if best else "MISS")
         print(f"  {flag} {s['n']:>2} {ja:<5} {s['artist'] or '?':<3} best={best or '-'}px ({len(hits)})", flush=True)
+
+    # 守門：兩站共用同一張掃描 = 有一站被鄰站頂掉了（愛知川就是這樣被武佐洗掉的）。
+    # 這種錯不會讓任何東西壞掉，只會讓那一站默默展示別人的畫。
+    used = {}
+    for s in stations:
+        if t := s.get("scan", {}).get("title"):
+            assert t not in used, f"{s['ja']} 與 {used[t]} 共用同一張掃描：{t}"
+            used[t] = s["ja"]
 
     json.dump(results, open(ROOT / "data/scan-candidates.json", "w"), ensure_ascii=False, indent=1)
     json.dump(doc, open(ROOT / "data/stations.json", "w"), ensure_ascii=False, indent=1)
