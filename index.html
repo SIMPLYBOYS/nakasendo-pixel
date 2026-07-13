@@ -78,7 +78,9 @@
   }
   .node.locked { opacity: 0.45; cursor: not-allowed; background: var(--washi-dark); }
   @keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(240,192,64,.35); } }
-  /* 站名毛筆體：Yuji Boku（OFL）子集，只含 55 站站名 84 字，37KB */
+  /* 站名毛筆體：Yuji Boku（OFL）子集，含全 70 站站名＋繪卷漢數字＋完歩證字串，共 195 字。
+     由 tools/make-font-subset.py 產出——字集是從 stations.json 與 UI 字串推出來的，不是手列的。
+     （fork 過來的舊子集是「東海道 55 站」切的，中山道 44 站有 35 站的名籤悄悄掉回楷體） */
   @font-face {
     font-family: "Yuji Boku";
     src: url("game-assets/fonts/yujiboku-stations.woff2") format("woff2");
@@ -214,8 +216,9 @@
   }
   @keyframes rip { to { width: 46px; height: 46px; opacity: 0; } }
   .hint-ring {
+    /* 尺寸由 JS 依 HIT_R 與場景實寬算出——圈必須等於真正可點的範圍，不能寫死 */
     position: absolute; transform: translate(-50%, -50%);
-    width: 120px; height: 120px; border-radius: 50%;
+    border-radius: 50%;
     border: 3px dashed var(--gold); pointer-events: none;
     animation: pulse 0.8s 3;
   }
@@ -1010,20 +1013,25 @@ function tapScene(nx, ny) {
   // naturalWidth：clientHeight 在圖片載入完成前是 0，會讓 Y 軸判定失效
   const aspect = img.naturalWidth ? img.naturalHeight / img.naturalWidth : 0.67;
   const found = foundOf(s);
+  // 取「最近」的那個，不是編號最小的那個。有 4 對細節的判定圈是重疊的
+  // （板橋的白馬與駕籠只差 0.12 < 2×HIT_R），先到先得會讓玩家點在駕籠上、
+  // 卻跳出「發現白馬」——點對了東西還被告知找到別的，比沒中還糟。
+  let hit = -1, best = HIT_R;
   for (let di = 0; di < s.details.length; di++) {
     if (found.includes(di)) continue;
-    const [x, y, name] = s.details[di];
+    const [x, y] = s.details[di];
     const dist = Math.hypot(nx - x, (ny - y) * aspect);
-    if (dist < HIT_R) {
-      state.found[s.slug] = [...found, di];
-      save();
-      misses = 0;
-      renderMarks();
-      renderDetailList();
-      toast(`發現「${name}」`);
-      if (isDone(s)) setTimeout(() => { openCard(current, true); updateHud(); }, 900);
-      return true;
-    }
+    if (dist < best) { best = dist; hit = di; }
+  }
+  if (hit >= 0) {
+    state.found[s.slug] = [...found, hit];
+    save();
+    misses = 0;
+    renderMarks();
+    renderDetailList();
+    toast(`發現「${s.details[hit][2]}」`);
+    if (isDone(s)) setTimeout(() => { openCard(current, true); updateHud(); }, 900);
+    return true;
   }
   // miss
   const wrap = $("scene-wrap");
@@ -1035,10 +1043,17 @@ function tapScene(nx, ny) {
   setTimeout(() => r.remove(), 550);
   if (++misses >= MISS_HINT) {
     misses = 0;
-    const unfound = s.details.filter((_, di) => !found.includes(di));
-    const [hx, hy] = unfound[Math.floor(Math.random() * unfound.length)];
+    // 提示離「剛才那一下」最近的未找到細節，不是隨機挑一個——玩家已經在某個東西附近
+    // 摸索了三下，卻被指去畫面另一頭，等於白給。
+    const [hx, hy] = s.details
+      .filter((_, di) => !found.includes(di))
+      .sort((a, b) => Math.hypot(nx - a[0], (ny - a[1]) * aspect)
+                    - Math.hypot(nx - b[0], (ny - b[1]) * aspect))[0];
     const h = document.createElement("div");
     h.className = "hint-ring";
+    // 圈的大小＝真正的命中範圍。原本寫死 120px：在手機上（場景寬約 390px，
+    // 命中直徑只有 58px）圈比可點範圍大一倍，照著圈邊點會落空——提示在說謊。
+    h.style.width = h.style.height = 2 * HIT_R * wrap.clientWidth + "px";
     h.style.left = hx*100 + "%";
     h.style.top = hy*100 + "%";
     wrap.appendChild(h);
