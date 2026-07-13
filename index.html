@@ -422,11 +422,11 @@
 
     <dt>音樂</dt>
     <dd>
-      「Kawarayu」by Yubatake（<a href="https://opengameart.org/content/kawarayu">OpenGameArt</a>）—
+      「Shinrin-Yoku」by <a href="https://patrickdearteaga.com">Patrick de Arteaga</a>（<a href="https://opengameart.org/content/shinrin-yoku">OpenGameArt</a>）—
       <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><br>
-      「Hot Springs Town」by Kistol（<a href="https://opengameart.org/content/hot-springs-town">OpenGameArt</a>）—
-      <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a><br>
-      「Ishikari Lore」Kevin MacLeod（<a href="https://incompetech.com/">incompetech.com</a>）—
+      「Sakura (Variation)」by <a href="https://wuxia-scrub.itch.io/">WuxiaScrub</a>（<a href="https://opengameart.org/content/sakura-variation">OpenGameArt</a>）—
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><br>
+      「Ishikari Lore」「Ripples」Kevin MacLeod（<a href="https://incompetech.com/">incompetech.com</a>）—
       <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><br>
       關掉音樂後仍有一首本作自製的 8-bit 道中曲（Web Audio 合成，非錄音）。
     </dd>
@@ -1841,9 +1841,10 @@ function bgmChiptune() {   // 三首 mp3 都載不到時的合成備援
 }
 // 三曲輪播。全數 CC BY 4.0 / CC0——授權與出處見「出典」。
 const BGM_LIST = [
-  "game-assets/bgm/01-kawarayu.mp3",          // Yubatake, CC BY 4.0（三味線，80 BPM）
-  "game-assets/bgm/02-hot-springs-town.mp3",  // Kistol, CC0（箏，宿場町）
+  "game-assets/bgm/01-shinrin-yoku.mp3",      // Patrick de Arteaga, CC BY 4.0（三味線＋尺八＋箏）
+  "game-assets/bgm/02-sakura-variation.mp3",  // WuxiaScrub, CC BY 4.0（〈さくらさくら〉變奏）
   "game-assets/bgm/03-ishikari-lore.mp3",     // Kevin MacLeod, CC BY 4.0（箏＋笛，82 BPM）
+  "game-assets/bgm/04-ripples.mp3",           // Kevin MacLeod, CC BY 4.0（獨奏箏，57 BPM）
 ];
 // 頁面載入就先挑好隨機起始曲並預載——下載不需要使用者手勢，只有播放需要，
 // 首次點擊時歌曲已在緩衝，不用再等 mp3 下載
